@@ -31,7 +31,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app test!</Text>
+        <Text style={styles.header}>Note App</Text>
         <TextInput
           style={styles.inputStyle}
           placeholder="Type here to translate!"
@@ -55,11 +55,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    margin: 10,
   },
   inputStyle: {
     height: 40,
-    borderColor: "green",
+    borderColor: 'green',
     borderWidth: 1,
     marginTop: 20,
+  },
+  header: {
+    fontSize: 30,
+    color: 'green',
+    fontWeight: 'bold',
   }
 });
