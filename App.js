@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
 import MapView from 'react-native-maps';
 
 export default class App extends React.Component {
@@ -22,10 +22,12 @@ export default class App extends React.Component {
   }
   renderTodo = () => {
     return this.state.todo.map((items, index) => (
-      <Text 
-        key={index}
-        onPress={() => {this.deleteTodo(items)}}
-      >{items}</Text>
+      <TouchableOpacity key={index}>
+        <Text 
+          style={styles.todo}
+          onPress={() => {this.deleteTodo(items)}}
+        >{items}</Text>
+      </TouchableOpacity>
     ))
   }
   render() {
@@ -67,5 +69,9 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: 'green',
     fontWeight: 'bold',
+  },
+  todo: {
+    fontSize: 18,
+    color: 'green'
   }
 });
